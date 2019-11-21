@@ -23,8 +23,17 @@ tardir() {
      tar -zcvf "${dir}.tar.gz" "${dir}"
 }
 
-# resolve ip for address 
+# resolve ip for address
 resolve_ip() {
      local address=$1
      getent hosts ${address} | awk '{ print $1 }'
+}
+
+#function run
+run_times() {
+    local number=$1
+    shift
+    for i in `seq $number`; do
+        $@
+    done
 }
