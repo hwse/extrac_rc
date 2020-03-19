@@ -37,3 +37,6 @@ run_times() {
         $@
     done
 }
+
+# cd in directories by typing only the directory
+shopt -s autocd
